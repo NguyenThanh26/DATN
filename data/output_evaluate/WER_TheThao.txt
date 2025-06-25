@@ -1,0 +1,4 @@
+===== WER Evaluation (Vietnamese) =====
+Reference File: /data/datn/DATN_chat/data/original_subtitle/Thethao_vi_vi.vtt
+Candidate File: /data/datn/DATN_chat/data/output/TheThao_vi_vi.vtt
+WER: 0.4958

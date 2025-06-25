@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo và Nhúng Phụ Đề</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h1>Tạo và Nhúng Phụ Đề</h1>
+        </div>
+
+        <!-- Nút phân trang -->
+        <div class="pagination">
+            <button class="btn btn-primary" onclick="showPage(1)">Danh sách video</button>
+            <button class="btn btn-primary" onclick="showPage(2)">Tạo phụ đề</button>
+        </div>
+
+        <!-- Trang 1: Danh sách video -->
+        <section id="page-videos" class="card">
+            <h2>Danh sách video đã xử lý</h2>
+            <div id="video-grid" class="video-grid"></div>
+        </section>
+
+        <!-- Trang 2: Form tạo phụ đề -->
+        <section id="page-upload" class="card hidden">
+            <h2>Tạo Phụ Đề</h2>
+            <form id="subtitle-form">
+                <div class="form-group">
+                    <label for="video-file">Tệp Video</label>
+                    <input type="file" id="video-file" accept="video/*,audio/*" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="origin-language">Ngôn ngữ gốc</label>
+                    <select id="origin-language" name="origin_language">
+                        <option value="en">Tiếng Anh</option>
+                        <option value="vi" selected>Tiếng Việt</option>
+                        <option value="ko">Tiếng Hàn</option>
+                        <option value="zh">Tiếng Trung</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="translate-language">Ngôn ngữ dịch</label>
+                    <select id="translate-language" name="translate_language">
+                        <option value="en" selected>Tiếng Anh</option>
+                        <option value="vi">Tiếng Việt</option>
+                        <option value="ko">Tiếng Hàn</option>
+                        <option value="zh">Tiếng Trung</option>
+                    </select>
+                    <small>(Nếu chọn giống Ngôn ngữ gốc, sẽ tạo bản hiệu chỉnh nếu bật Hiệu chỉnh văn bản, hoặc giữ nguyên nếu không hiệu chỉnh)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="embed-subtitle">Nhúng phụ đề vào video</label>
+                    <select id="embed-subtitle" name="embed_subtitle">
+                        <option value="none" selected>Không nhúng (chỉ tạo file .vtt)</option>
+                        <option value="hard">Nhúng cứng (Hard-coded)</option>
+                        <option value="soft">Nhúng mềm (Soft-coded)</option>
+                    </select>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="use-correction" name="use_correction">
+                    <label for="use-correction">Hiệu chỉnh văn bản</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Xử lý</button>
+            </form>
+
+            <div id="process-result" class="result"></div>
+            <div id="process-loading">Đang xử lý video...</div>
+
+            <div class="video-section hidden" id="video-section">
+                <h3>Video với phụ đề</h3>
+                <video id="video-player" class="video-player" controls>
+                    <source src="" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ thẻ video.
+                </video>
+                <div class="video-controls">
+                    <button id="toggle-subtitle" class="btn btn-secondary hidden" onclick="toggleSubtitle()">Tắt phụ đề</button>
+                    <button id="rewind-button" class="btn btn-secondary hidden" onclick="rewindVideo()">Lùi 10s</button>
+                    <button id="fast-forward-button" class="btn btn-secondary hidden" onclick="fastForwardVideo()">Tua 10s</button>
+                    <button id="reset-button" class="btn btn-danger hidden" onclick="resetVideoPlayer()">Xóa</button>
+                </div>
+                <div id="subtitle-info"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+===== WER Evaluation (Vietnamese) =====
+Reference File: /data/datn/ai_service/data/output_vtt_demo/AmNhac_vi_vi.vtt
+Candidate File: /data/datn/ai_service/data/output_vtt/AmNhac_vi_vi.vtt
+WER: 0.5489

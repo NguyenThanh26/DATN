@@ -1,0 +1,4 @@
+===== WER Evaluation (English) =====
+Reference File: /data/datn/DATN_chat/data/original_subtitle/PhimTiengAnh_en_en.vtt
+Candidate File: /data/datn/DATN_chat/data/output/PhimTiengAnh_en_en.vtt
+WER: 0.3314

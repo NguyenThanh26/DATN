@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+logs/
+temp/
+*.log
+*.ipynb_checkpoints
+models/nllb-200-distilled-600M/model.safetensors
+ 

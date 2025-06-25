@@ -1,0 +1,4 @@
+===== WER Evaluation (Vietnamese) =====
+Reference File: /data/datn/DATN_chat/data/original_subtitle/kinhte.vtt
+Candidate File: /data/datn/DATN_chat/data/output/Kinhte_vi_vi.vtt
+WER: 0.0685
